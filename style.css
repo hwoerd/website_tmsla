@@ -1,0 +1,738 @@
+/* TMSLA Website – stijl gebaseerd op Alzheimercentrum Amsterdam */
+
+:root {
+  --groen:          #6ab650;
+  --groen-donker:   #4e8a38;
+  --groen-hover:    #5aa040;
+  --blauw:          #005b9a;
+  --blauw-licht:    #e8f2fa;
+  --oranje:         #f07d00;
+  --oranje-licht:   #fff4e6;
+  --tekst:          #313131;
+  --tekst-licht:    #555;
+  --grijs-licht:    #f5f5f5;
+  --grijs-rand:     #e0e0e0;
+  --wit:            #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: var(--tekst);
+  background: var(--wit);
+  line-height: 1.75;
+}
+
+/* ── Navigatie ── */
+header {
+  background: var(--wit);
+  border-bottom: 2px solid var(--grijs-rand);
+  padding: 0 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  text-decoration: none;
+  color: var(--tekst);
+}
+
+.logo-badge {
+  background: var(--groen);
+  color: var(--wit);
+  font-size: 1.1rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  padding: 0.45rem 0.9rem;
+  border-radius: 9999px;
+}
+
+.logo-tekst .naam {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--tekst);
+  line-height: 1.1;
+}
+
+.logo-tekst .ondertitel {
+  font-size: 0.72rem;
+  color: var(--tekst-licht);
+  letter-spacing: 0.2px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 0.2rem;
+  align-items: center;
+}
+
+nav ul li a {
+  color: var(--tekst);
+  text-decoration: none;
+  padding: 0.45rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: background 0.18s, color 0.18s;
+}
+
+nav ul li a:hover {
+  background: var(--grijs-licht);
+  color: var(--groen-donker);
+}
+
+nav ul li a.actief {
+  background: var(--groen);
+  color: var(--wit);
+}
+
+/* Aanmeld-knop in nav */
+nav ul li.nav-cta a {
+  background: var(--groen);
+  color: var(--wit);
+  padding: 0.5rem 1.3rem;
+}
+
+nav ul li.nav-cta a:hover {
+  background: var(--groen-hover);
+  color: var(--wit);
+}
+
+/* Hamburger */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+.menu-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: var(--tekst);
+  border-radius: 3px;
+}
+
+/* ── Hero ── */
+.hero {
+  background: var(--grijs-licht);
+  border-bottom: 1px solid var(--grijs-rand);
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.4rem;
+  max-width: 760px;
+  margin: 0 auto 1rem;
+  line-height: 1.25;
+  color: var(--tekst);
+}
+
+.hero h1 span {
+  color: var(--groen-donker);
+}
+
+.hero p {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  color: var(--tekst-licht);
+}
+
+.hero-knoppen {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ── Knoppen – pill-shaped zoals Alzheimercentrum ── */
+.knop {
+  display: inline-block;
+  padding: 0.65em 1.7em;
+  border-radius: 9999px;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: background 0.18s, color 0.18s, transform 0.15s;
+  font-family: Arial, sans-serif;
+}
+
+.knop:hover {
+  transform: translateY(-1px);
+}
+
+.knop-groen {
+  background: var(--groen);
+  color: var(--wit);
+  border-color: var(--groen);
+}
+
+.knop-groen:hover {
+  background: var(--groen-hover);
+  border-color: var(--groen-hover);
+}
+
+.knop-omlijnd {
+  background: transparent;
+  color: var(--groen-donker);
+  border-color: var(--groen);
+}
+
+.knop-omlijnd:hover {
+  background: var(--groen);
+  color: var(--wit);
+}
+
+.knop-donker {
+  background: #32373c;
+  color: var(--wit);
+  border-color: #32373c;
+}
+
+.knop-donker:hover {
+  background: #1a1d20;
+}
+
+/* ── Paginatitel-balk (sub-hero) ── */
+.pagina-hero {
+  background: var(--grijs-licht);
+  border-bottom: 1px solid var(--grijs-rand);
+  padding: 3rem 2rem 2.5rem;
+  text-align: center;
+}
+
+.pagina-hero h1 {
+  font-size: 1.9rem;
+  color: var(--tekst);
+  margin-bottom: 0.6rem;
+}
+
+.pagina-hero p {
+  font-size: 1rem;
+  color: var(--tekst-licht);
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+/* ── Secties ── */
+section {
+  padding: 4rem 2rem;
+}
+
+.sectie-grijs {
+  background: var(--grijs-licht);
+}
+
+.container {
+  max-width: 1060px;
+  margin: 0 auto;
+}
+
+.container-smal {
+  max-width: 740px;
+  margin: 0 auto;
+}
+
+/* ── Typografie ── */
+h2 {
+  font-size: 1.75rem;
+  color: var(--tekst);
+  margin-bottom: 1.2rem;
+  line-height: 1.25;
+}
+
+h2 .accent {
+  color: var(--groen-donker);
+}
+
+h3 {
+  font-size: 1.1rem;
+  color: var(--tekst);
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+p {
+  margin-bottom: 1rem;
+  color: var(--tekst-licht);
+}
+
+ul {
+  margin: 0.5rem 0 1rem 1.4rem;
+  color: var(--tekst-licht);
+}
+
+ul li {
+  margin-bottom: 0.45rem;
+}
+
+/* Streepje onder h2 – vergelijkbaar met Alzheimercentrum */
+.h2-lijn {
+  display: inline-block;
+  padding-bottom: 0.4rem;
+  border-bottom: 3px solid var(--groen);
+  margin-bottom: 1.4rem;
+}
+
+/* ── Kaartjes ── */
+.kaarten {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.kaart {
+  background: var(--wit);
+  border-radius: 12px;
+  padding: 1.8rem;
+  border: 1px solid var(--grijs-rand);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.kaart:hover {
+  box-shadow: 6px 6px 20px rgba(0,0,0,0.09);
+  transform: translateY(-2px);
+}
+
+.kaart-icon {
+  margin-bottom: 1rem;
+  color: var(--groen-donker);
+  display: block;
+  line-height: 1;
+}
+
+.kaart-icon svg {
+  display: block;
+}
+
+/* ── Groen accent-blok ── */
+.groen-blok {
+  background: var(--groen);
+  color: var(--wit);
+  border-radius: 12px;
+  padding: 2.2rem 2rem;
+  margin: 2rem 0;
+}
+
+.groen-blok h3 {
+  color: var(--wit);
+  font-size: 1.25rem;
+  margin-bottom: 0.7rem;
+}
+
+.groen-blok p,
+.groen-blok li {
+  color: rgba(255,255,255,0.92);
+}
+
+.groen-blok a {
+  color: var(--wit);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/* ── Highlight box ── */
+.highlight-box {
+  background: var(--grijs-licht);
+  border-left: 4px solid var(--groen);
+  border-radius: 0 8px 8px 0;
+  padding: 1rem 1.4rem;
+  margin: 1.5rem 0;
+}
+
+.highlight-box p {
+  margin-bottom: 0;
+  color: var(--tekst);
+}
+
+/* ── Twee-kolom layout ── */
+.twee-kolom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
+  align-items: start;
+}
+
+@media (max-width: 720px) {
+  .twee-kolom { grid-template-columns: 1fr; gap: 2rem; }
+}
+
+/* ── Behandeling tijdlijn ── */
+.tijdlijn {
+  border: 1px solid var(--grijs-rand);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 1.2rem 0;
+}
+
+.tijdlijn-rij {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.9rem 1.2rem;
+  border-bottom: 1px solid var(--grijs-rand);
+  background: var(--wit);
+}
+
+.tijdlijn-rij:last-child { border-bottom: none; }
+
+.tijdlijn-week {
+  font-weight: 700;
+  color: var(--tekst);
+  min-width: 85px;
+  font-size: 0.88rem;
+}
+
+.tijdlijn-balk {
+  flex: 1;
+  min-height: 32px;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 1rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--wit);
+  white-space: nowrap;
+}
+
+.balk-intensief { background: #32373c; flex: 0 0 auto; }
+.balk-onderhoud { background: var(--groen); }
+.balk-controle  { background: var(--groen-donker); flex: 0 0 auto; }
+
+/* ── Onderzoekers ── */
+.onderzoekers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+}
+
+.onderzoeker-kaart {
+  background: var(--wit);
+  border-radius: 10px;
+  padding: 1.2rem 1.3rem;
+  border: 1px solid var(--grijs-rand);
+  border-top: 3px solid var(--blauw);
+}
+
+/* ── Oranje accent highlight ── */
+.highlight-oranje {
+  background: var(--oranje-licht);
+  border-left: 4px solid var(--oranje);
+  border-radius: 0 8px 8px 0;
+  padding: 1rem 1.4rem;
+  margin: 1.5rem 0;
+}
+
+.highlight-oranje p { margin-bottom: 0; color: var(--tekst); }
+
+/* ── Blauw accent highlight ── */
+.highlight-blauw {
+  background: var(--blauw-licht);
+  border-left: 4px solid var(--blauw);
+  border-radius: 0 8px 8px 0;
+  padding: 1rem 1.4rem;
+  margin: 1.5rem 0;
+}
+
+.highlight-blauw p { margin-bottom: 0; color: var(--tekst); }
+
+/* ── Oranje badge ── */
+.badge-oranje {
+  display: inline-block;
+  background: var(--oranje);
+  color: var(--wit);
+  border-radius: 9999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.2rem 0.75rem;
+  letter-spacing: 0.3px;
+}
+
+/* ── Blauw badge ── */
+.badge-blauw {
+  display: inline-block;
+  background: var(--blauw);
+  color: var(--wit);
+  border-radius: 9999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.2rem 0.75rem;
+  letter-spacing: 0.3px;
+}
+
+.onderzoeker-rol {
+  font-size: 0.75rem;
+  color: var(--blauw);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-bottom: 0.35rem;
+}
+
+.onderzoeker-naam {
+  font-weight: 700;
+  color: var(--tekst);
+  font-size: 0.97rem;
+  margin-bottom: 0.2rem;
+}
+
+.onderzoeker-titel {
+  font-size: 0.83rem;
+  color: var(--tekst-licht);
+}
+
+/* ── Formulier ── */
+.formulier {
+  width: 100%;
+}
+
+.formulier-groep {
+  margin-bottom: 1.3rem;
+}
+
+.formulier-groep label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  color: var(--tekst);
+  font-size: 0.95rem;
+}
+
+.formulier-groep input,
+.formulier-groep select,
+.formulier-groep textarea {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border: 1.5px solid var(--grijs-rand);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: Arial, sans-serif;
+  color: var(--tekst);
+  background: var(--wit);
+  transition: border-color 0.2s;
+}
+
+.formulier-groep input:focus,
+.formulier-groep select:focus,
+.formulier-groep textarea:focus {
+  outline: none;
+  border-color: var(--groen);
+}
+
+.formulier-groep textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+.checkbox-groep {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+}
+
+.checkbox-groep input[type="checkbox"] {
+  width: auto;
+  margin-top: 3px;
+  accent-color: var(--groen);
+}
+
+.succes-bericht {
+  display: none;
+  background: #edf7e9;
+  border: 2px solid var(--groen);
+  border-radius: 10px;
+  padding: 1.8rem;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.succes-bericht h3 { color: var(--groen-donker); font-size: 1.3rem; margin-bottom: 0.5rem; }
+.succes-bericht p  { color: var(--tekst-licht); margin-bottom: 0; }
+
+/* ── Video ── */
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 6px 6px 20px rgba(0,0,0,0.12);
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border: none;
+}
+
+.video-placeholder {
+  background: #1c1c1c;
+  border-radius: 12px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+  font-size: 1rem;
+  gap: 0.8rem;
+}
+
+.video-placeholder .play-icon {
+  width: 72px;
+  height: 72px;
+  background: var(--groen);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--wit);
+}
+
+/* ── CTA-baner (groen blok breed) ── */
+.cta-balk {
+  background: var(--groen);
+  padding: 3.5rem 2rem;
+  text-align: center;
+}
+
+.cta-balk h2 {
+  color: var(--wit);
+  margin-bottom: 0.8rem;
+}
+
+.cta-balk p {
+  color: rgba(255,255,255,0.9);
+  max-width: 500px;
+  margin: 0 auto 1.8rem;
+}
+
+/* ── Logos balk ── */
+.logos-balk {
+  background: var(--grijs-licht);
+  border-top: 1px solid var(--grijs-rand);
+  border-bottom: 1px solid var(--grijs-rand);
+  padding: 1.8rem 2rem;
+  text-align: center;
+}
+
+.logos-balk .label {
+  font-size: 0.8rem;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 0.9rem;
+}
+
+.logos-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.instituut-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: var(--tekst);
+}
+
+.instituut-logo .sym {
+  width: 38px;
+  height: 38px;
+  background: var(--groen);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--wit);
+  font-size: 0.72rem;
+  font-weight: 900;
+}
+
+/* ── Footer ── */
+footer {
+  background: #32373c;
+  color: rgba(255,255,255,0.8);
+  padding: 2.5rem 2rem;
+  text-align: center;
+}
+
+footer a {
+  color: var(--groen);
+  text-decoration: none;
+}
+
+footer a:hover { text-decoration: underline; }
+
+footer p {
+  color: rgba(255,255,255,0.75);
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+}
+
+footer .footer-naam {
+  color: var(--wit);
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* ── Responsief ── */
+@media (max-width: 768px) {
+  .hero h1 { font-size: 1.75rem; }
+  .pagina-hero h1 { font-size: 1.5rem; }
+  nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+    background: var(--wit);
+    border-bottom: 2px solid var(--grijs-rand);
+    padding: 1rem 1.5rem;
+    gap: 0.2rem;
+    z-index: 99;
+  }
+  nav ul.open { display: flex; }
+  nav ul li a { display: block; border-radius: 8px; }
+  .menu-toggle { display: flex; }
+  header { position: relative; }
+  .kaarten { grid-template-columns: 1fr; }
+}
